@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            let message = `test message
+
+            `;
+
+            function normaliseString(str) {
+                // Define a mapping of accented letters to their non-accented equivalents
+                const charMap = {
+                    'à': 'a',
+                    'á': 'a',
+                    'ä': 'a',
+                    'é': 'e',
+                    'è': 'e',
+                    'ê': 'e',
+                    'ë': 'e',
+                    'í': 'i',
+                    'î': 'i',
+                    'ï': 'i',
+                    'ì': 'i',
+                    'ó': 'o',
+                    'ô': 'o',
+                    'ö': 'o',
+                    'ú': 'u',
+                    'û': 'u',
+                    'ü': 'u',
+                    'ū': 'u',
+                    'ç': 'c',
+                    'À': 'A',
+                    'Á': 'A',
+                    'Ä': 'A',
+                    'É': 'E',
+                    'È': 'E',
+                    'Ê': 'E',
+                    'Ë': 'E',
+                    'Í': 'I',
+                    'Ì': 'I',
+                    'Î': 'I',
+                    'Ï': 'I',
+                    'Ó': 'O',
+                    'Ô': 'O',
+                    'Ö': 'O',
+                    'Ú': 'U',
+                    'Û': 'U',
+                    'Ü': 'U',
+                    'Ū': 'U',
+                    'Ç': 'C',
+                    // Add more mappings as needed
+                    // **********TODO also move to Javascript file**********
+                };
+
+                // Use a regular expression to replace special characters
+                return str.replace(/[àáäéèêëíîìïóôöúûüūçÀÁÄÉÈÊËÍÌÎÏÓÔÖÚÛÜŪÇ]/g, match => charMap[match] || match);
+            }
+
+            function sendEmail() {
+                // Get user's signature from text area
+                let signature = document.getElementById("signature").value;
+
+                // Replace spaces with space characters
+                signature = signature.replace(/ /g, " ");
+
+                // Normalise signature by replacing special characters
+                let normalisedSignature = normaliseString(signature);
+
+                // Encode signature for use in mail-to link
+                let encodedSignature = encodeURIComponent(normalisedSignature).replace(/%20/g, " ");
+
+                // Create mail-to link
+                let mailToLink = `mailto:exampleEmail1@email.com,exampleEmail2@email.com?subject=Test Subject Line&body=${encodeURIComponent(message + encodedSignature)}`;
+                console.log(encodedSignature)
+
+                // Open email client with pre-filled email
+                window.location.href = mailToLink;
+            }
+        </script>
+    </head>
+    <body>
+        <div style="width: auto; margin: 0 auto;">
+            <p>Please sign your name and we will write and sign the below email on your behalf.
+                <br>
+            </p>
+            <div>
+                <textarea id="signature" name="signature" placeholder="Type your full name here" style="width: 50%; height: 100px;"></textarea>
+            </div>
+            <input type="button" value="Send Email" onclick="sendEmail()" style="font-size: 30px; width: 50%;">
+            <!--TODO refactor code so message is populated below automatically from actual email-->
+            <h3>Test Subject Line</h3>
+            <p>
+                test message
+            </p>
+        </div>
+    </body>
+</html>
