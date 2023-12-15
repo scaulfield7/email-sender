@@ -7,6 +7,7 @@
         <meta name="color-scheme" content="dark light">
         <meta description="A website built to allow users to send a pre-defined email (which they can preview) to multiple, pre-defined recipients (which they can preview in their email app).">
         <title>Email Sender</title>
+        <link href="./styles.css" rel="stylesheet"/>
         <script>
             let emailMessageBody = `Email message body
 
@@ -86,18 +87,12 @@
         </script>
     </head>
     <body>
-        <div style="width: auto; margin: 0 auto;">
-            <p>Please sign your name and we will write and sign the below email on your behalf.
-                <br>
-            </p>
-            <div>
-                <textarea id="signature" name="signature" placeholder="Type your full name here" style="width: 50%; height: 100px;"></textarea>
-            </div>
-            <input type="button" value="Send Email" onclick="sendEmail()" style="font-size: 30px; width: 50%;">
+        <div>
+            <p>Please sign your name and we will write and sign the below email on your behalf.</p>
+            <textarea class="signature-box" id="signature" name="signature" placeholder="Type your full name here"></textarea>
+            <input class="send-email-button" type="button" value="Send Email" onclick="sendEmail()">
             <h3><script>document.write(subjectLine)</script></h3>
-            <p>
-                <script>document.write(emailMessageBody)</script>
-            </p>
+            <p><script>document.write(emailMessageBody)</script></p>
         </div>
     </body>
 </html>
