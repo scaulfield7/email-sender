@@ -77,7 +77,7 @@
                 let encodedSignature = encodeURIComponent(normalisedSignature).replace(/%20/g, " ");
 
                 // Create mail-to link
-                let mailToLink = `mailto:exampleEmail1@email.com,exampleEmail2@email.com?subject=${subjectLine}&&body=${encodeURIComponent(emailMessageBody + encodedSignature)}`;
+                let mailToLink = `mailto:exampleEmail1@email.com,exampleEmail2@email.com?subject=${subjectLine}&body=${encodeURIComponent(emailMessageBody + encodedSignature)}`;
                 console.log(encodedSignature)
 
                 // Open email client with pre-filled email
