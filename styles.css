@@ -8,6 +8,7 @@ body {
 }
 
 .send-email-button {
+    font-family: Cascadia Code, sans-serif;
     font-size: 30px;
     width: 50%;
 }
