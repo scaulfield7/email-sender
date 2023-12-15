@@ -6,3 +6,8 @@ body {
     width: 50%;
     height: 40px;
 }
+
+.send-email-button {
+    font-size: 30px;
+    width: 50%;
+}
