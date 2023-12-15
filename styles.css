@@ -1,3 +1,8 @@
 body {
     font-family: sans-serif;
 }
+
+.signature {
+    width: 50%;
+    height: 100px;
+}
