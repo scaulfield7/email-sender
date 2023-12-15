@@ -8,9 +8,11 @@
         <meta description="A website built to allow users to send a pre-defined email (which they can preview) to multiple, pre-defined recipients (which they can preview in their email app).">
         <title>Email Sender</title>
         <script>
-            let message = `test message
+            let emailMessageBody = `Email message body
 
             `;
+
+            let subjectLine = `Subject Line`;
 
             function normaliseString(str) {
                 // Define a mapping of accented letters to their non-accented equivalents
@@ -75,7 +77,7 @@
                 let encodedSignature = encodeURIComponent(normalisedSignature).replace(/%20/g, " ");
 
                 // Create mail-to link
-                let mailToLink = `mailto:exampleEmail1@email.com,exampleEmail2@email.com?subject=Test Subject Line&body=${encodeURIComponent(message + encodedSignature)}`;
+                let mailToLink = `mailto:exampleEmail1@email.com,exampleEmail2@email.com?subject=${subjectLine}&&body=${encodeURIComponent(emailMessageBody + encodedSignature)}`;
                 console.log(encodedSignature)
 
                 // Open email client with pre-filled email
@@ -92,10 +94,9 @@
                 <textarea id="signature" name="signature" placeholder="Type your full name here" style="width: 50%; height: 100px;"></textarea>
             </div>
             <input type="button" value="Send Email" onclick="sendEmail()" style="font-size: 30px; width: 50%;">
-            <!--TODO refactor code so message is populated below automatically from actual email-->
-            <h3>Test Subject Line</h3>
+            <h3><script>document.write(subjectLine)</script></h3>
             <p>
-                test message
+                <script>document.write(emailMessageBody)</script>
             </p>
         </div>
     </body>
