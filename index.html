@@ -68,18 +68,17 @@
                 // Get user's signature from text area
                 let signature = document.getElementById("signature").value;
 
-                // Replace spaces with space characters
-                signature = signature.replace(/ /g, " ");
+                // Replace multiple spaces with a single space character, then trim
+                signature = signature.replace(/\s+/g, " ").trim();
 
                 // Normalise signature by replacing special characters
                 let normalisedSignature = normaliseString(signature);
 
-                // Encode signature for use in mail-to link
-                let encodedSignature = encodeURIComponent(normalisedSignature).replace(/%20/g, " ");
+                // Trim trailing whitespace from emailMessageBody
+                let trimmedEmailMessageBody = emailMessageBody.trim();
 
-                // Create mail-to link
-                let mailToLink = `mailto:exampleEmail1@email.com,exampleEmail2@email.com?subject=${subjectLine}&&body=${encodeURIComponent(emailMessageBody + encodedSignature)}`;
-                console.log(encodedSignature)
+                // Create encoded mail-to link
+                let mailToLink = `mailto:exampleEmail1@email.com,exampleEmail2@email.com?subject=${subjectLine}&body=${encodeURIComponent(trimmedEmailMessageBody + "\n" + normalisedSignature)}`;
 
                 // Open email client with pre-filled email
                 window.location.href = mailToLink;
