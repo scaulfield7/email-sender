@@ -9,6 +9,8 @@
         <title>Email Sender</title>
         <link href="./styles.css" rel="stylesheet"/>
         <script>
+            let subjectLine = `Subject Line`;
+            
             let emailMessageBody = `This is where the full body of the email goes, for more of a visual representation of how it would look, here's some more text:
             
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae augue ut turpis commodo faucibus. Suspendisse quis purus id felis viverra iaculis in at nisl. Aenean tristique nibh eget massa vestibulum, eget lacinia lorem gravida. Sed sit amet odio ornare, consequat enim vitae, rutrum erat. Vivamus id condimentum mi. Etiam porttitor urna vitae dui posuere, a congue nibh ullamcorper. Quisque ac consectetur nulla. Sed hendrerit porta dui eget auctor. Donec molestie, nisl at porttitor dictum, arcu mauris dapibus augue, ut aliquam augue leo ut diam. Pellentesque sollicitudin tempor metus eu mattis. Donec bibendum purus augue, et blandit erat hendrerit et. Fusce quis congue nunc, eu tincidunt metus.
@@ -22,8 +24,6 @@ Vivamus sollicitudin tempus libero at venenatis. Curabitur egestas elementum eli
 Sed et nisl nec tortor auctor consequat in nec orci. Phasellus fringilla, lorem sit amet eleifend efficitur, eros ante consectetur ligula, sit amet tempor metus nisi nec risus. Mauris tempor odio id ante vulputate, ac mattis eros ultricies. Aenean pharetra lacus sapien, ut iaculis eros gravida at. Suspendisse nec accumsan ante, ut euismod mi. Nullam suscipit condimentum nisl, cursus dapibus nisl imperdiet sit amet. Sed at viverra tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel placerat libero. Fusce posuere eros at vulputate vehicula. Pellentesque eu facilisis odio. Curabitur massa arcu, hendrerit lacinia odio et, tristique ullamcorper tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ut facilisis sapien, at laoreet ex.
 
             `;
-
-            let subjectLine = `Subject Line`;
 
             function normaliseString(str) {
                 // Define a mapping of accented letters to their non-accented equivalents
