@@ -14,6 +14,9 @@ Sed et nisl nec tortor auctor consequat in nec orci. Phasellus fringilla, lorem 
 
             `;
 
+document.getElementById("subject-line").textContent = subjectLine;
+document.getElementById("email-message-body").textContent = emailMessageBody;
+
 function normaliseString(str) {
     // Define a mapping of accented letters to their non-accented equivalents
     const charMap = {
