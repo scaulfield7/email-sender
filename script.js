@@ -59,7 +59,6 @@ function normaliseString(str) {
         'Ū': 'U',
         'Ç': 'C',
         // Add more mappings as needed
-        // **********TODO also move to Javascript file**********
     };
 
     // Use a regular expression to replace special characters
