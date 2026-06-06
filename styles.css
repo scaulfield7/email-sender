@@ -14,6 +14,10 @@ body {
     width: 50%;
 }
 
+#email-message-body {
+    white-space: pre-wrap;
+}
+
 .footer-links {
     font-size: 14px;
 }
